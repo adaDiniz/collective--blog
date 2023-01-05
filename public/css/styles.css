@@ -1,0 +1,51 @@
+
+.container{
+    padding-bottom: 60px;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+.summaryContent {
+    max-width: 30ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a {
+    color: #1abc9c;
+}
+
+button {
+    margin-top: 10px;
+}
+
+footer{
+    height: 40px;
+	background-color: #1abc9c;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    text-align: center;
+    align-items: center;
+    padding-top: 15px;
+    font-size: 10px;
+    color: #fff;
+}
