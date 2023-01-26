@@ -28,9 +28,9 @@ const postsSchema = new mongoose.Schema({
 const Post = mongoose.model("Post", postsSchema)
 
 app.get("/", function(req, res) {
+
   Post.find({}, function(err, posts) {
     if (!err) {
-
       res.render("home", {
         homeContent: homeStartingContent, 
         posts: posts,
@@ -66,18 +66,16 @@ app.post("/compose", function(req, res) {
 })
 
 app.get("/posts/:postId", function(req, res) {
-  const requestedTitle = _.lowerCase(req.params.postName)
-  
-  posts.forEach(function(post) {
-    const postTitleLowerCase = _.lowerCase(post.title)
+  const requestedPostId = req.params.postId
 
-    if (postTitleLowerCase == requestedTitle) {
+  Post.findOne({_id: requestedPostId}, function(err, foundPost) {
+    if(!err) {
       res.render("post", {
-        postTitle: post.title,
-        postBody: post.body,
-        postAuthor: post.author
+        postTitle: foundPost.title,
+        postBody: foundPost.post,
+        postAuthor: foundPost.author
       })
-    } 
+    }
   })
 })
 
